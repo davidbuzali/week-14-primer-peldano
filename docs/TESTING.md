@@ -1,4 +1,24 @@
-# Week 13 testing log - Primer Peldaño
+# Week 14 testing log - Primer Peldaño
+
+**Test date:** 12 November 2026, America/Mexico_City
+
+## Week 14 mechanical pass
+
+- 31 Node tests cover inherited evidence boundaries, pricing formulas, evidence-status verdicts, local scenario storage, corrupt-data recovery, export/import validation, and Week 14 source contracts.
+- TypeScript strict checking, ESLint with zero warnings, and the Next.js production build pass.
+- Deployment 1 shipped the working calculator before the scenario library.
+
+### Defect found and fixed
+
+The first corrupt-storage test found that one malformed local object could hide every valid saved scenario because validation threw while filtering the array. Per-record exception handling now rejects only the malformed object and preserves valid scenarios. The regression test passes, the 20-scenario cap remains enforced, and invalid top-level data still fails safely.
+
+### Evidence not yet claimed
+
+The fresh persona walkthrough and real budget-owner conversation remain pending. No accepted price, measured 10:1 result, profitability result, or hiring outcome is claimed.
+
+---
+
+## Inherited Week 13 record
 
 **Test date:** 7 November 2026, America/Mexico_City
 

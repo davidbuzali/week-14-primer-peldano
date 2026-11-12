@@ -1,5 +1,14 @@
 # Decision log - Primer Peldaño
 
+## Week 14 session close 2 - calculator, scenarios, and mechanical fix
+
+- Implemented pure pricing formulas, the Spanish calculator, and the preserved `/evidence` route.
+- Completed deployment 1 in the dedicated Week 14 Vercel project after tests, type checking, lint, and production build passed.
+- Added local save, reopen, duplicate, delete, reset, print, and JSON export with no remote transport.
+- Mechanical testing found that one malformed local object could hide valid scenarios; per-record recovery now preserves valid data.
+- Expanded the suite to 31 tests and preserved the fresh persona pass and payer conversation as uncompleted gates.
+- Next move: deploy release 2, verify the stable URL, then run the fresh persona walkthrough.
+
 ## Week 14 session close 1 - separate repository and packet before code
 
 - Preserved the full Week 13 repository and cloned its final tracked state into a distinct local Week 14 repository with no remote attached.

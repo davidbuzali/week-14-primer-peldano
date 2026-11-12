@@ -1,10 +1,10 @@
-# Primer Peldaño - Week 13
+# Primer Peldaño - Week 14
 
-Primer Peldaño is David Buzali's Week 13 real-human comprehension-test build. It helps a worker practice mapping existing informal-work evidence to criteria for one invented opening, while making the system's limits testable: term overlap is not verification or sufficiency, no file is sent automatically, and a person retains decision authority.
+Primer Peldaño Week 14 adds **La tarifa en vivo**, a local-only employer pricing calculator for a bounded five-review pilot. It compares like-for-like current effort with the proposed price, separates buyer value from provider economics, labels every input measured, quoted, or assumed, and can explicitly report that the 10:1 threshold is not demonstrated.
 
-- Live URL: https://week-13-primer-peldano.vercel.app
-- GitHub: https://github.com/davidbuzali/week-13-primer-peldano
-- Vercel project: https://vercel.com/davidbuzali/week-13-primer-peldano
+- Live URL: https://week-14-primer-peldano.vercel.app
+- GitHub: https://github.com/davidbuzali/week-14-primer-peldano
+- Vercel project: https://vercel.com/davidbuzali/week-14-primer-peldano
 - Product charter: `docs/PRODUCT_CHARTER.md`
 - Packet-before-code: `docs/PACKET.md`
 - Implementation prompt: `docs/IMPLEMENTATION_PROMPT.md`
