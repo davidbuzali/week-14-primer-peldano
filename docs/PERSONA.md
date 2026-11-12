@@ -1,63 +1,64 @@
-# Week 13 preliminary persona record - Primer Peldaño
+# Week 14 persona-test packet - Primer Peldaño
 
-**Date:** 7 November 2026
+**Date prepared:** 12 November 2026
+
+**Status:** Ready to run; not yet completed in a fresh independent chat.
 
 ## Integrity note
 
-This is a developer-run risk walkthrough using an invented persona. It did **not** occur in a fresh independent chat and therefore is not the completed Layer 1 persona test. It documents what the build currently protects and prepares the exact prompt for the required independent pass. No confusion is attributed to a synthetic user who was not actually run.
+This document prepares the required Layer 1 synthetic persona test. It does not attribute reactions, confusion, completion, or approval to a persona who has not actually been run in a fresh chat. The live product and screen order have been verified, but the persona result and usability fix remain incomplete until the independent transcript exists.
 
-## Synthetic persona for the required pass
+## Synthetic persona
 
-**Rogelio A. (invented), 52, Estado de México.** Rogelio has decades of maintenance and textile-operations experience from informal arrangements. He uses WhatsApp, reads slowly on his phone, distrusts hiring platforms, and leaves a process when it seems to demand unpaid work or hide who will see his information. He worries that his experience “no cuenta” because the workplace was unfamiliar to employers.
+**Laura Medina (invented), 43, Ecatepec, Estado de México.** Laura owns a 35-person metal-parts workshop. She handles operations and hiring with spreadsheets, WhatsApp, and help from her accountant. She can read financial statements but distrusts HR software and sales calculators. She reviews products on her phone, reads slowly, and abandons a tool when it mixes cash cost with speculative value or hides how a result was calculated. She will not enter applicant names into an unfamiliar website.
 
-Rogelio is not the reported real worker and contains no real person's data.
-
-## Screen sequence to test
-
-### 1. Real-use stop-state
-
-The page opens blocked and asks for no evidence. The independent persona must explain who needs to act next and whether a real employer is waiting.
-
-Pass boundary: Rogelio says the employer commitment is not real and that he should not enter real evidence.
-
-### 2. Invented practice
-
-After `Abrir demo inventada`, every actor and record is labeled invented. The independent persona must identify that this is practice without a hiring consequence.
-
-Pass boundary: Rogelio does not interpret `Empresa Horizonte` or the vacancy as a real opportunity.
-
-### 3. Honest term map
-
-The old authority-laden labels are gone. Results now say `Coincidencia de términos`, `Posible información faltante`, or `Sin coincidencia de términos`, and every full overlap repeats that it does not establish truth, authorship, quality, or sufficiency.
-
-Pass boundary: Rogelio says a green card is a word-overlap signal, not proof that he qualifies.
-
-### 4. Adversarial example
-
-The `Trampa: lista de palabras` record deliberately contains preferred terms without a coherent action or result. It produces four term matches while the challenge states that the text is insufficient.
-
-Pass boundary: Rogelio rejects the example as insufficient and asks for human clarification or review.
-
-### 5. Local feedback and reset
-
-The five checks cover fictional data, non-verification, local file behavior, human authority, and no automatic transfer. The local panel says events exclude the evidence and note; a downloaded session includes deliberately saved feedback. `Borrar y reiniciar sesión` clears both browser storage and the visible feedback draft.
-
-Pass boundary: Rogelio can say what remains on the device, what a download contains, and that nothing reaches an employer automatically.
-
-## Pre-persona risk register
-
-| Priority | Risk to test | Consequence | Existing safeguard |
-|---|---|---|---|
-| 1 | Green still feels like approval | False confidence in hiring readiness | Honest labels, repeated non-verification language, adversarial example |
-| 2 | “Local” is read as “already sent” | Privacy misunderstanding | Explicit no-transfer language before inputs, export, feedback, and checks |
-| 3 | Reset appears to erase but leaves a note | Prior participant's words remain visible | Fixed in deployment 2; feedback remounts on new session ID |
-| 4 | Five yes/no answers become rote clicking | Apparent completion without comprehension | Facilitator requires a spoken explanation for each answer |
-| 5 | Fictional employer is mistaken for a job | Worker invests real effort for no opportunity | Default stop-state and repeated invented labels |
+Laura is not a real payer and contains no real person's information.
 
 ## Required fresh-chat prompt
 
-> You are Rogelio A., an invented 52-year-old worker in Estado de México. You have decades of maintenance and textile-operations experience from informal arrangements, use WhatsApp, read slowly on your phone, distrust hiring platforms, and abandon processes that demand unpaid work or hide who will see your information. I will show you Primer Peldaño one screen at a time. Attempt the task as Rogelio. Narrate what you think each screen means, what you fear, every word you do not understand, and the exact point where you would leave. Do not be polite to the product and do not invent capabilities you cannot see.
+> You are Laura Medina, an invented 43-year-old owner of a 35-person metal-parts workshop in Ecatepec. You manage hiring with spreadsheets and WhatsApp, understand ordinary business costs, distrust HR software and ROI calculators, and review this product on a phone. You stop when assumptions are hidden, when cash cost is mixed with speculative value, or when a tool appears to request applicant data. I will show you Primer Peldaño one screen at a time. Attempt to decide whether a five-review pilot is worth discussing. Narrate what you think every number means, which fields you can answer, which words confuse you, what you fear, and the exact point where you would leave. Do not be polite and do not invent capabilities that are not visible.
+
+## Screen sequence
+
+1. Open `https://week-14-primer-peldano.vercel.app` at a phone-sized viewport. Show the headline and boundary card before scrolling.
+2. Show `Proceso actual` and ask Laura which five-review baseline fields she can answer without help.
+3. Show `Oferta del piloto` and `Costo de entrega`; ask who each cost belongs to.
+4. Show `Valor comparable`; ask Laura to explain what she would include and exclude.
+5. Show the result cards, 8.3:1 ratio, and `Umbral 10:1 no demostrado`; ask whether the verdict feels honest.
+6. Change one value and its evidence status; ask Laura to predict what should change before observing the result.
+7. Save, reopen, duplicate, and delete an invented scenario; ask what she believes left the device.
+8. Show print and JSON export; ask which artifact she would take to a budget meeting.
+
+## Pass boundaries
+
+- Laura understands that every default number is invented and not an accepted price or measured return.
+- She distinguishes employer purchase cost, employer value, provider delivery cost, and provider contribution.
+- She understands that 10:1 can be mathematically reached while remaining assumption-dependent.
+- She enters no applicant or worker information.
+- She understands that saved scenarios remain on the current device unless she deliberately exports them.
+- She can identify the next evidence needed before a purchase discussion.
+
+## Pre-test risk register
+
+| Priority | Risk to test | Consequence | Existing safeguard |
+|---|---|---|---|
+| 1 | `Otro valor comparable` is too abstract | User invents a large number to make the ratio pass | Evidence status, formula disclosure, failed default, note field |
+| 2 | Provider delivery cost is mistaken for employer price | Budget conversation uses the wrong denominator | Separate cards and headings |
+| 3 | Green or a ratio over 10 feels like proof | Speculative benefit becomes a sales claim | `Solo con supuestos` verdict |
+| 4 | Save appears to send data to Primer Peldaño | Employer avoids the tool or discloses data unknowingly | `Solo en este dispositivo` beside results and save controls |
+| 5 | Mobile input density causes abandonment | User never reaches the verdict | One-column responsive layout and bounded fields |
+
+## Observation log to complete in the fresh chat
+
+| Screen | Persona interpretation | Hesitation or unknown word | Would continue? | Consequence |
+|---|---|---|---|---|
+| Boundary card | Pending | Pending | Pending | Pending |
+| Current process | Pending | Pending | Pending | Pending |
+| Pilot and delivery cost | Pending | Pending | Pending | Pending |
+| Comparable value | Pending | Pending | Pending | Pending |
+| Verdict | Pending | Pending | Pending | Pending |
+| Saved scenarios | Pending | Pending | Pending | Pending |
 
 ## Completion requirement
 
-Run the prompt in a fresh independent chat, show screenshots in order, preserve every hesitation, and fix the highest-consequence confusion before replacing this preliminary record. Until then, the persona deliverable must remain labeled incomplete.
+Run the prompt in a fresh independent chat, show the screens in order, preserve every hesitation, select the highest-consequence confusion, change the product, rerun the affected step, and replace the pending rows with actual synthetic observations. Until then, `PERSONA_David_Buzali.pdf` must remain visibly labeled **ready to run - incomplete**.

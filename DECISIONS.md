@@ -1,5 +1,15 @@
 # Decision log - Primer Peldaño
 
+## Week 14 session close 3 - submission package and field-test boundary
+
+- Verified the live calculator at 390 x 844 with `innerWidth`, `scrollWidth`, and `bodyWidth` all equal to 390.
+- Replaced inherited Week 13 submission documents with Week 14 Persona preparation, demo script, checklist, payer interview guide, testing evidence, and Buildchat continuation.
+- Generated and visually inspected the final six-page Packet, two-page Persona preparation, and two-page Buildchat PDFs; no clipping, overlap, broken tables, or unreadable text was found.
+- Kept the Persona artifact explicitly labeled `ready to run - incomplete` and left all observation cells pending because the required fresh independent chat has not occurred.
+- Kept the payer record pending because no real budget owner response has been supplied; a compliment or hypothetical yes will not be relabeled as demand.
+- Preserved the demo video as a manual recording task and provided a timed 3:30 script.
+- Next move: David runs the prepared persona prompt in a fresh chat and conducts one real payer conversation; then the resulting transcript and actual response can replace the pending evidence and trigger any final product fix.
+
 ## Week 14 session close 2 - calculator, scenarios, and mechanical fix
 
 - Implemented pure pricing formulas, the Spanish calculator, and the preserved `/evidence` route.

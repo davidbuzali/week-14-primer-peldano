@@ -7,6 +7,8 @@
 - 31 Node tests cover inherited evidence boundaries, pricing formulas, evidence-status verdicts, local scenario storage, corrupt-data recovery, export/import validation, and Week 14 source contracts.
 - TypeScript strict checking, ESLint with zero warnings, and the Next.js production build pass.
 - Deployment 1 shipped the working calculator before the scenario library.
+- The final production URL returned HTTP 200 and exposed the critical `Umbral 10:1 no demostrado`, `Solo en este dispositivo`, and headline text.
+- A live 390 x 844 browser check returned `innerWidth = 390`, `documentElement.scrollWidth = 390`, and `body.scrollWidth = 390`; no horizontal overflow was present.
 
 ### Defect found and fixed
 
