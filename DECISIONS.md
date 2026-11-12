@@ -1,5 +1,18 @@
 # Decision log - Primer Peldaño
 
+## Week 14 session close 1 - separate repository and packet before code
+
+- Preserved the full Week 13 repository and cloned its final tracked state into a distinct local Week 14 repository with no remote attached.
+- Bound the Week 14 slice to `La tarifa en vivo`: an employer-side calculator for one bounded five-review pilot with saved local scenarios.
+- Kept the proposed MX$12,000 pilot price, MX$6,000 delivery cost, five-review capacity, MX$10,000 commercial floor, and MX$120,000 10:1 hurdle visibly provisional.
+- Required like-for-like comparison, visible formulas, and `measured`, `quoted`, or `assumed` status on every business input.
+- Separated employer value and purchase cost from provider delivery cost, contribution, and margin.
+- Preserved the Blueprint shadow clause: workers pay MX$0; paying more never buys worker data, hidden ranking, behavioral analytics, or cross-opening reuse.
+- Chose versioned local-only scenario storage, a 20-scenario cap, explicit delete/reset/export, and no database, authentication, analytics, or candidate data.
+- Generated the packet mockup before code and corrected its first inconsistent 17:1 warning; the accepted mockup deliberately shows a truthful 6.8:1 failure.
+- Verified that GitHub authentication has expired. No Week 14 remote repository or deployment will be claimed until David signs back in.
+- Tomorrow's first move: restore GitHub access, create `davidbuzali/week-14-primer-peldano`, push the packet commit, then implement pure calculator logic and tests before UI work.
+
 ## Week 13 session close 1 - separate repository and packet before code
 
 - Preserved the complete Week 12 repository and created a separate Week 13 working repository from its public-source state.
