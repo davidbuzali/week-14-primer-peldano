@@ -1,7 +1,8 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { calculatePricing, createDefaultScenario, formatMxn, validatePricingScenario } from '@/src/pricing/logic'
+import { deleteScenario, duplicateScenario, exportScenarios, loadScenarios, resetScenarios, saveScenario } from '@/src/pricing/storage'
 import type { EvidenceStatus, NumericInput, PricingScenario } from '@/src/pricing/types'
 
 type NumericKey = {
@@ -58,6 +59,12 @@ const verdictCopy = {
 
 export default function PricingApp() {
   const [scenario, setScenario] = useState<PricingScenario>(() => createDefaultScenario())
+  const [saved, setSaved] = useState<PricingScenario[]>([])
+  const [storageMessage, setStorageMessage] = useState('')
+  useEffect(() => {
+    const timer = window.setTimeout(() => setSaved(loadScenarios(window.localStorage)), 0)
+    return () => window.clearTimeout(timer)
+  }, [])
   const errors = useMemo(() => validatePricingScenario(scenario), [scenario])
   const result = useMemo(() => errors.length ? null : calculatePricing(scenario), [errors.length, scenario])
 
@@ -70,6 +77,22 @@ export default function PricingApp() {
   }
 
   const verdict = result ? verdictCopy[result.verdict] : null
+
+  function saveCurrent() {
+    if (errors.length) return
+    setSaved(saveScenario(window.localStorage, scenario))
+    setStorageMessage('Escenario guardado solo en este dispositivo.')
+  }
+
+  function downloadScenarios() {
+    const blob = new Blob([exportScenarios(saved)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const anchor = document.createElement('a')
+    anchor.href = url
+    anchor.download = 'primer-peldano-escenarios.json'
+    anchor.click()
+    URL.revokeObjectURL(url)
+  }
 
   return (
     <main className="pricing-shell paper-grid">
@@ -217,9 +240,31 @@ export default function PricingApp() {
               </div>
 
               <div className="action-bar">
-                <div><strong>Escenarios guardados</strong><span>La función local se añade en el siguiente incremento.</span></div>
-                <button type="button" disabled>Guardar escenario</button>
+                <div><strong>{saved.length} escenario{saved.length === 1 ? '' : 's'} guardado{saved.length === 1 ? '' : 's'}</strong><span>{storageMessage || 'Solo en este dispositivo; nada se envía.'}</span></div>
+                <div className="action-buttons">
+                  <button type="button" onClick={saveCurrent}>Guardar escenario</button>
+                  <button type="button" onClick={() => window.print()}>Imprimir memo</button>
+                  <button type="button" disabled={!saved.length} onClick={downloadScenarios}>Exportar JSON</button>
+                </div>
               </div>
+              {saved.length > 0 && (
+                <section className="saved-library" aria-label="Escenarios guardados">
+                  <div className="saved-title"><h3>Escenarios guardados</h3><button type="button" onClick={() => { if (window.confirm('¿Borrar todos los escenarios locales?')) { resetScenarios(window.localStorage); setSaved([]); setStorageMessage('Se borraron los escenarios locales.') } }}>Borrar todos</button></div>
+                  <div className="saved-grid">
+                    {saved.map((item) => (
+                      <article key={item.id}>
+                        <strong>{item.label}</strong>
+                        <span>{formatMxn(item.pilotPrice.value)} · {statusLabels[item.pilotPrice.status]}</span>
+                        <div>
+                          <button type="button" onClick={() => setScenario(item)}>Abrir</button>
+                          <button type="button" onClick={() => { const copy = duplicateScenario(item); setSaved(saveScenario(window.localStorage, copy)); setScenario(copy) }}>Duplicar</button>
+                          <button type="button" onClick={() => { if (window.confirm('¿Borrar este escenario?')) setSaved(deleteScenario(window.localStorage, item.id)) }}>Borrar</button>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              )}
             </>
           ) : null}
         </section>

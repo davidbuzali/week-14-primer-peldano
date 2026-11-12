@@ -90,6 +90,17 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .action-bar div { display: grid; gap: 3px; }
 .action-bar span { color: #c7d6dc; font-size: .76rem; }
 .action-bar button { border: 0; border-radius: 10px; padding: 10px 15px; font-weight: 800; }
+.action-buttons { display: flex !important; grid-auto-flow: column; gap: 7px !important; }
+.action-buttons button { cursor: pointer; }
+.action-buttons button:disabled { cursor: not-allowed; opacity: .45; }
+.saved-library { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 18px; }
+.saved-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.saved-title h3 { margin: 0; }
+.saved-title button, .saved-grid button { border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 8px; padding: 7px 9px; cursor: pointer; }
+.saved-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+.saved-grid article { border: 1px solid var(--line); border-radius: 12px; padding: 13px; display: grid; gap: 7px; }
+.saved-grid span { color: var(--ink-soft); font-size: .76rem; }
+.saved-grid article div { display: flex; gap: 6px; flex-wrap: wrap; }
 .error-card { background: var(--red-soft); color: #6e2424; border: 1px solid #e1aaa2; border-radius: 14px; padding: 18px; margin-top: 18px; }
 .pricing-shell footer { max-width: 1480px; margin: auto; padding: 0 4vw 32px; color: var(--ink-soft); font-size: .8rem; }
 
@@ -107,6 +118,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .field-controls { grid-template-columns: minmax(0, 1fr) 102px; }
   .result-grid, .economics-grid, .verdict-card { grid-template-columns: 1fr; }
   .results-title, .action-bar { align-items: stretch; flex-direction: column; }
+  .action-buttons { grid-auto-flow: row; display: grid !important; }
+  .saved-grid { grid-template-columns: 1fr; }
   .local-pill { align-self: flex-start; }
 }
 
